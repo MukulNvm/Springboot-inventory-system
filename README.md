@@ -63,4 +63,10 @@ server.port=8086
 #run the app
 mvn spring-boot:run
 
+## Screenshots
+
+### Inventory Management Dashboard
+
+![Inventory Dashboard](Inventory.png.png)
+
 
