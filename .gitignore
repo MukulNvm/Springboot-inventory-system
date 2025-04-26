@@ -1,0 +1,14 @@
+/target/
+/build/
+/.idea/
+/*.iml
+/.vscode/
+.DS_Store
+Thumbs.db
+*.log
+.env
+*.class
+*.tmp
+node_modules/
+*.db
+
