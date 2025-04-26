@@ -1,28 +1,66 @@
-# Inventory Management System 
+# Inventory Management System - Spring Boot
 
-Organizations use management systems to regularize their tasks. They can be simple or complex depending on the needs of the organization. An inventory management system (or inventory system) is the process by which you track your goods throughout your entire supply chain, from purchasing to production to end sales. It governs how you approach inventory management for your business.
+A full-stack *Inventory Management System* built with *Spring Boot, connected to **MySQL (RDS)* and deployed on *AWS EC2*.
 
-The Web-based Inventory Management System will attempt to automate and replace the traditional paper based approach for inventory management and tracking which is being used in the Police Department. The paper based approach is quite tedious and it results in a lot of time wastage. Records would be created for each transaction and would serve as a central database where looking for a single record would take a few seconds. This paperless system of management would increase the efficiency, decrease the complexity and provide flexibility to the organization.
+---
 
-## Entity Relationship Diagram
+## Features
 
-The ERD of the project was developed based on the functional requirements and is shown below:
+- Add, edit, delete, and list products
+- Persistent database using MySQL (AWS RDS)
+- Runs on cloud using AWS EC2
+- Spring Boot with Maven build
+- Professional deployment-ready architecture
 
-<p align="center">
-<img src="/Resources/IMS-ERD.PNG">
-</p>
-
-## Project Prototype Demonstration
-
-A prototype of the project was developed to identify the interfaces and to develop navigation between different screens. A demonstration is shown in the video below: 
-
-https://user-images.githubusercontent.com/57248707/122088515-38f7bd00-ce1f-11eb-8bc7-3bdb428f7858.mp4
+---
 
 ## Tech Stack
 
-* Spring Boot
-* Thymeleaf
-* MySQL
-* Hibernate
+- *Java 17*
+- *Spring Boot*
+- *Spring Data JPA*
+- *MySQL (AWS RDS)*
+- *AWS EC2*
+- *Thymeleaf* (for templates)
+- *Bootstrap* (frontend styling)
 
-## Project Status: In-Progress 🚧
+---
+
+## How to Set Up (EC2 + RDS)
+
+### 1. SSH into EC2 and Setup Environment
+```bash
+sudo apt update
+sudo apt install unzip -y
+sudo apt install mysql-server -y
+sudo systemctl start mysql
+sudo systemctl enable mysql
+
+#clone and Build the project
+unzip Inventory-Management-System-Spring-Boot-main.zip
+cd Inventory-Management-System-Spring-Boot-main/
+chmod +x mvnw
+./mvnw clean install
+
+#Update Application.properties
+#In src/main/resources/application.properties:
+# Database
+spring.datasource.url=jdbc:mysql://<RDS-ENDPOINT>:3306/inventorydb
+spring.datasource.username=imsuser
+spring.datasource.password=imspassword123
+
+# Hibernate
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+
+# Logging (Optional)
+logging.level.org.hibernate.SQL=DEBUG
+logging.level.org.hibernate.type=TRACE
+
+# Server port
+server.port=8086
+
+#run the app
+mvn spring-boot:run
+
+
