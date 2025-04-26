@@ -67,7 +67,7 @@ mvn spring-boot:run
 
 ### Inventory Management Dashboard
 
-![Inventory Dashboard](https://github.com/MukulNvm/Springboot-inventory-system/blob/b307a8ba1c78646926b387151719eb87f58bd6bd/Inventory.png.png)
+![Inventory Dashboard](https://raw.githubusercontent.com/MukulNvm/Springboot-inventory-system/main/Inventory.png.png)
 
 
 
