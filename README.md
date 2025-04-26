@@ -67,7 +67,7 @@ mvn spring-boot:run
 
 ### Inventory Management Dashboard
 
-![Inventory Dashboard](images/inventory.png)
+![Inventory Dashboard](images/Inventory.png)
 
 
 
